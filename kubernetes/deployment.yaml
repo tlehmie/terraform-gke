@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: beacon
+  name: app-deploy-demo
   labels:
-    app: beacon
+    app: app-deploy-demo
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: beacon
+      app: app-deploy-demo
   template:
     metadata:
       labels:
-        app: beacon
+        app: app-deploy-demo
     spec:
       containers:
-        - name: beacon
-          image: onlydole/beacon:1.19.1
+        - name: app-deploy-demo
+          image: kserge2001/dev
