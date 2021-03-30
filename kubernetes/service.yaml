@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: beacon
-  namespace: beacon
+  name: app-demo-service
+  namespace: gke-demo
 spec:
   selector:
-    app: beacon
+    app: app-deploy-demo
   ports:
     - protocol: TCP
       port: 8080
