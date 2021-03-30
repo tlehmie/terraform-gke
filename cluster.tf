@@ -18,7 +18,7 @@ module "gke_cluster" {
   initial_node_count         = 1
   ip_range_pods              = module.gke_network.subnets_secondary_ranges[0].*.range_name[0]
   ip_range_services          = module.gke_network.subnets_secondary_ranges[0].*.range_name[1]
-  kubernetes_version         = "1.18.12-gke.1210"
+  kubernetes_version         = "1.18.16-gke.302"
 
   master_authorized_networks = [
     {

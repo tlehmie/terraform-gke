@@ -39,7 +39,7 @@ resource "kubernetes_deployment" "app-deploy-demo" {
 
       spec {
         container {
-          image = "kserge2001/dev"
+          image = "kserge2001/school"
           name  = "app-deploy-demo"
         }
       }
@@ -58,7 +58,7 @@ resource "kubernetes_service" "app-deploy-service" {
     }
     port {
       port        = 8080
-      target_port = 80
+      target_port = 8080
     }
     type = "LoadBalancer"
   }

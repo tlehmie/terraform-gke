@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
         - name: app-deploy-demo
-          image: kserge2001/dev
+          image: kserge2001/school
