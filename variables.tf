@@ -1,7 +1,7 @@
 variable "project_id" {
   type        = string
   description = "Project Identifier"
-  default     = "cloud-302913"
+  default     = "ProjectID"
 }
 
 variable "project_region" {
@@ -13,7 +13,7 @@ variable "project_region" {
 variable "project_prefix" {
   type        = string
   description = "Project Prefix"
-  default     = "hug-ist-demo"
+  default     = "gke-demo"
 }
 
 variable "node_pools_oauth_scopes" {
