@@ -14,11 +14,7 @@
   - [Author Information](#author-information)
   - [License](#license)
 
-## Important Links
-
-* Slides: [speakerdeck.com/ksatirli/understanding-the-google-provider-for-terraform-feat-k8s](https://speakerdeck.com/ksatirli/understanding-the-google-provider-for-terraform-feat-k8s)
-* Code: [github.com/ksatirli/understanding-the-google-provider-for-terraform-feat-k8s](https://github.com/ksatirli/understanding-the-google-provider-for-terraform-feat-k8s)
-
+## Important link 
 ## Reading material
 
 This section is a collection of links that will help you make the most of today's session.
@@ -54,7 +50,7 @@ Before `plan` and `apply`, always clean up your code:
 
 ## Author Information
 
-This repository is maintained by [Kerim Satirli](https://github.com/ksatirli) and [Taylor Dolezal](https://github.com/onlydole).
+This repository is maintained by Serge (https://github.com/kserge2001) 
 
 ## License
 
