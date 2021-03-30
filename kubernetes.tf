@@ -6,18 +6,18 @@ provider "kubernetes" {
   cluster_ca_certificate = base64decode(module.gke_cluster.ca_certificate)
 }
 
-resource "kubernetes_namespace" "beacon" {
+resource "kubernetes_namespace" "gke-demo" {
   metadata {
-    name = "beacon"
+    name = "gke-demo"
   }
 }
 
-resource "kubernetes_deployment" "beacon" {
+resource "kubernetes_deployment" "app-deploy-demo" {
   metadata {
-    name      = "beacon"
-    namespace = kubernetes_namespace.beacon.id
+    name      = "app-deploy-demo"
+    namespace = kubernetes_namespace.gke-demo.id
     labels = {
-      app = "beacon"
+      app = "app-deploy-demo"
     }
   }
 
@@ -26,35 +26,35 @@ resource "kubernetes_deployment" "beacon" {
 
     selector {
       match_labels = {
-        app = "beacon"
+        app = "app-deploy-demo"
       }
     }
 
     template {
       metadata {
         labels = {
-          app = "beacon"
+          app = "app-deploy-demo"
         }
       }
 
       spec {
         container {
-          image = "onlydole/beacon:1.19.1"
-          name  = "beacon"
+          image = "kserge2001/dev"
+          name  = "app-deploy-demo"
         }
       }
     }
   }
 }
 
-resource "kubernetes_service" "beacon" {
+resource "kubernetes_service" "app-deploy-service" {
   metadata {
-    name      = "beacon"
-    namespace = kubernetes_namespace.beacon.id
+    name      = "app-deploy-service"
+    namespace = kubernetes_namespace.gke-demo.id
   }
   spec {
     selector = {
-      app = "${kubernetes_deployment.beacon.metadata.0.labels.app}"
+      app = "${kubernetes_deployment.app-deploy-demo.metadata.0.labels.app}"
     }
     port {
       port        = 8080
