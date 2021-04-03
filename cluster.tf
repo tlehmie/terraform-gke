@@ -4,7 +4,7 @@ module "gke_cluster" {
 
   add_cluster_firewall_rules        = true
   create_service_account            = true
-  description                       = "GKE Demonstration Serge"
+  description                       = "GKE Demonstration thomas"
   disable_legacy_metadata_endpoints = true
 
   firewall_inbound_ports = [
